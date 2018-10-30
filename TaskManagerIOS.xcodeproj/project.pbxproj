@@ -12,6 +12,7 @@
 		36273A882188AC57008FF6C9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36273A862188AC57008FF6C9 /* Main.storyboard */; };
 		36273A8A2188AC58008FF6C9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36273A892188AC58008FF6C9 /* Assets.xcassets */; };
 		36273A8D2188AC58008FF6C9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36273A8B2188AC58008FF6C9 /* LaunchScreen.storyboard */; };
+		36FEAC332188E795007910FC /* TaskViewTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36FEAC322188E795007910FC /* TaskViewTableCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		36273A892188AC58008FF6C9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		36273A8C2188AC58008FF6C9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		36273A8E2188AC58008FF6C9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		36FEAC322188E795007910FC /* TaskViewTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskViewTableCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +56,47 @@
 		36273A812188AC57008FF6C9 /* TaskManagerIOS */ = {
 			isa = PBXGroup;
 			children = (
-				36273A822188AC57008FF6C9 /* AppDelegate.swift */,
-				36273A842188AC57008FF6C9 /* ViewController.swift */,
-				36273A862188AC57008FF6C9 /* Main.storyboard */,
+				36FEAC312188E263007910FC /* Utilities */,
+				36FEAC302188E238007910FC /* DataModels */,
+				36FEAC2E2188E1FD007910FC /* ViewControllers */,
+				36FEAC2F2188E202007910FC /* StoryBoards */,
 				36273A892188AC58008FF6C9 /* Assets.xcassets */,
 				36273A8B2188AC58008FF6C9 /* LaunchScreen.storyboard */,
 				36273A8E2188AC58008FF6C9 /* Info.plist */,
 			);
 			path = TaskManagerIOS;
+			sourceTree = "<group>";
+		};
+		36FEAC2E2188E1FD007910FC /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				36273A842188AC57008FF6C9 /* ViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		36FEAC2F2188E202007910FC /* StoryBoards */ = {
+			isa = PBXGroup;
+			children = (
+				36273A862188AC57008FF6C9 /* Main.storyboard */,
+			);
+			path = StoryBoards;
+			sourceTree = "<group>";
+		};
+		36FEAC302188E238007910FC /* DataModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DataModels;
+			sourceTree = "<group>";
+		};
+		36FEAC312188E263007910FC /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				36273A822188AC57008FF6C9 /* AppDelegate.swift */,
+				36FEAC322188E795007910FC /* TaskViewTableCell.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,6 +172,7 @@
 			files = (
 				36273A852188AC57008FF6C9 /* ViewController.swift in Sources */,
 				36273A832188AC57008FF6C9 /* AppDelegate.swift in Sources */,
+				36FEAC332188E795007910FC /* TaskViewTableCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
