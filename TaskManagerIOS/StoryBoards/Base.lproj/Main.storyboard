@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="mxt-92-tX0">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="mxt-92-tX0">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -21,7 +21,7 @@
                                 <rect key="frame" x="0.0" y="116" width="375" height="551"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="120" id="WLq-W3-WdW">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="120" id="WLq-W3-WdW" customClass="GameTableViewCell" customModule="TaskManagerIOS" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="120"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="WLq-W3-WdW" id="I7U-0m-fgm">
@@ -35,27 +35,31 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QKI-Gb-TCJ">
-                                                    <rect key="frame" x="256" y="10" width="35" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="importance" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7od-Rl-jI7">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="importance" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7od-Rl-jI7">
                                                     <rect key="frame" x="252" y="88" width="88" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3av-Qn-efI">
-                                                    <rect key="frame" x="342" y="-5" width="33" height="128"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3av-Qn-efI">
+                                                    <rect key="frame" x="342" y="-25" width="33" height="169.5"/>
                                                     <color key="backgroundColor" red="0.15217580759999999" green="1" blue="0.15824211460000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 </view>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="3av-Qn-efI" firstAttribute="top" secondItem="I7U-0m-fgm" secondAttribute="topMargin" constant="-36" id="95m-9i-cSW"/>
+                                                <constraint firstItem="3av-Qn-efI" firstAttribute="centerY" secondItem="I7U-0m-fgm" secondAttribute="centerY" id="IiR-cv-psg"/>
+                                                <constraint firstItem="7od-Rl-jI7" firstAttribute="bottom" secondItem="I7U-0m-fgm" secondAttribute="bottomMargin" id="QQL-9H-KPY"/>
+                                                <constraint firstAttribute="trailing" secondItem="3av-Qn-efI" secondAttribute="trailing" id="bxO-OG-ABf"/>
+                                                <constraint firstItem="7od-Rl-jI7" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="I7U-0m-fgm" secondAttribute="leading" constant="20" symbolic="YES" id="eTr-C2-ZLA"/>
+                                                <constraint firstAttribute="trailing" secondItem="7od-Rl-jI7" secondAttribute="trailing" constant="35" id="yQ2-XK-XmM"/>
+                                                <constraint firstItem="3av-Qn-efI" firstAttribute="leading" secondItem="7od-Rl-jI7" secondAttribute="trailing" constant="2" id="z8H-Rg-fKo"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="importanceLabel" destination="7od-Rl-jI7" id="2Pu-eP-2Yv"/>
+                                            <outlet property="taskNameLabel" destination="lah-gw-DF3" id="uYy-ET-TpN"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -81,6 +85,9 @@
                             </button>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="taskListViewTable" destination="Ma6-3B-Ts6" id="ja5-3f-IYf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -89,7 +96,7 @@
         <!--Add Tasks-->
         <scene sceneID="1jX-5k-AVR">
             <objects>
-                <viewController title="Add Tasks" id="ac4-SH-WAI" sceneMemberID="viewController">
+                <viewController title="Add Tasks" id="ac4-SH-WAI" customClass="AddTasksViewController" customModule="TaskManagerIOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Znc-Bf-evt">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -129,6 +136,9 @@
                                         <state key="normal" title="Submit">
                                             <color key="titleColor" red="1" green="0.1311528757" blue="0.1584063886" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </state>
+                                        <connections>
+                                            <action selector="submitButtonTapped:" destination="ac4-SH-WAI" eventType="touchUpInside" id="zNO-DJ-HRF"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -148,6 +158,10 @@
                     </view>
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="importanceSegmentController" destination="rjw-TS-EwD" id="NxM-JY-rkB"/>
+                        <outlet property="newTaskTextField" destination="7de-LM-CvT" id="fw1-Je-Sc2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NhM-NO-APq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
