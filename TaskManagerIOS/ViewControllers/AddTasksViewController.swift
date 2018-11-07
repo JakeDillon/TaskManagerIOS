@@ -39,14 +39,14 @@ class AddTasksViewController: UIViewController {
 
 
     // importance
-    var rating: String!
+    var importance: String!
         switch importanceSegmentController.selectedSegmentIndex {
     case 0:
-    rating = "not that important"
+    importance = "not that important"
     case 1:
-    rating = "Need to do soon"
+    importance = "Need to do soon"
     case 2:
-    rating = "Urgeent, do ASAP"
+    importance = "Urgeent, do ASAP"
     }
         
         

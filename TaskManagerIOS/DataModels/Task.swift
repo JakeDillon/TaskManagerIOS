@@ -13,6 +13,7 @@ import RealmSwift
 class Task: Object {
     @objc dynamic var title: String = ""
     @objc dynamic var importance: String = ""
-    
+    @objc dynamic var dueDate: Date? = nil
+    @objc dynamic var checkedIn: Bool = true
     
 }
