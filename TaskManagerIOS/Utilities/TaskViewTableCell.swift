@@ -9,7 +9,7 @@
 import UIKit
 
 
-class GameTableViewCell: UITableViewCell {
+class TaskTableViewCell: UITableViewCell {
     
     @IBOutlet weak var taskNameLabel: UILabel!
     

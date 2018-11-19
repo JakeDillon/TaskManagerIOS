@@ -9,6 +9,15 @@
 import UIKit
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 5
+    }
+    
+   
+    
+    
+    
+    
     
     
 
@@ -24,7 +33,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         taskListViewTable.reloadData()
     }
     func tableViewTable(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return TaskManager.sharedInstance.getGameCount()
+        return TaskManager.sharedInstance.getTaskCount()
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
@@ -32,19 +41,23 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "taskCell") as! TaskTableViewCell
         
-        let currentGame = TaskManager.sharedInstance.getTask(at: indexPath.row)
+        let currentTask = TaskManager.sharedInstance.getTask(at: indexPath.row)
         
-        cell.taskNameLabel.text = currentGame.title
-        cell.importanceLabel.text = currentGame.rating
-    }
+        cell.taskNameLabel.text = currentTask.title
+        cell.importanceLabel.text = currentTask.importance
+    
     if currentTask.checkedIn {
     cell.taskNameLabel.backgroundColor = UIColor.green
     } else {
-    cell.statusLabel.backgroundColor = UIColor.red
+    cell.taskNameLabel.backgroundColor = UIColor.red
     }
+    
+    return cell
+    
+}
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         let deleteAction = UITableViewRowAction(style: .destructive, title: "Delete") { _, _ in
-            // Remove the game at the current index from our game array
+            // Remove the task at the current index from our game array
             TaskManager.sharedInstance.removeGame(at: indexPath.row)
             // Delete the row from the table view at the current index path
             tableView.deleteRows(at: [indexPath], with: .bottom)
@@ -53,7 +66,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let title = taskForIndex.checkedIn ? "Checked Out" : "Checked In"
         let checkOutOrINAction = UITableViewRowAction(style: .normal, title: title) {
             _, _ in
-            TaskManager.sharedInstance.checkGameInOrOut(at: indexPath.row)
+            TaskManager.sharedInstance.taskInOrOut(at: indexPath.row)
             tableView.reloadRows(at: [indexPath], with: .fade)
         }
         return [deleteAction, checkOutOrINAction]
