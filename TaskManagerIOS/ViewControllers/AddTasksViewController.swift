@@ -63,7 +63,7 @@ class AddTasksViewController: UIViewController {
         
         TaskManager.sharedInstance.addTask(task: newTask)
         
-        self.performSegue(withIdentifier: "unwindToGameList", sender: self)
+        self.performSegue(withIdentifier: "unwindToTaskList", sender: self)
         
         
     }

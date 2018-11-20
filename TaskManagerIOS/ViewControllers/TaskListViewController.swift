@@ -10,7 +10,7 @@ import UIKit
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return TaskManager.sharedInstance.getTaskCount()
     }
     
    
@@ -60,7 +60,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             // Remove the task at the current index from our game array
             TaskManager.sharedInstance.removeGame(at: indexPath.row)
             // Delete the row from the table view at the current index path
-            tableView.deleteRows(at: [indexPath], with: .bottom)
+            tableView.deleteRows(at: [indexPath], with: .fade)
         }
         let taskForIndex = TaskManager.sharedInstance.getTask(at: indexPath.row)
         let title = taskForIndex.checkedIn ? "Checked Out" : "Checked In"
@@ -72,6 +72,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         return [deleteAction, checkOutOrINAction]
     }
     
-    @IBAction func unwindToGameList(segue: UIStoryboardSegue) { }
+    @IBAction func unwindToTaskList(segue: UIStoryboardSegue) { }
 }
 
